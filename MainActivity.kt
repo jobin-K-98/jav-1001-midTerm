@@ -50,4 +50,51 @@ class MainActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {}
         })
     }
+    
+    // Function to convert the value to the specified unit
+    // This function is created in such a way that each unit will be converted to a specified unit that is hard coded.
+    private fun calculateResult(fromUnit: String, inputValue: String) {
+        val input = inputValue.toFloatOrNull()
+
+        var result: Double? = null
+        var resultUnit: String? = null
+
+        if (input != null && fromUnit != null) {
+            when (fromUnit) {
+                "Kilometer" -> {
+                    result = input / 1.609
+                    resultUnit = "Miles"
+                }
+
+                "Miles" -> {
+                    result =  input * 1.609
+                    resultUnit = "Kilometer"
+                }
+                "Centimeter" -> {
+                    result = input / 2.54
+                    resultUnit = "Inches"
+                }
+                "Inches" -> {
+                    result = input * 2.54
+                    resultUnit = "Centimeter"
+                }
+                "Celsius" -> {
+                    result = (input * 1.8) + 32
+                    resultUnit = "Fahrenheit"
+                }
+                "Fahrenheit" -> {
+                    result = (input - 32) * 0.55
+                    resultUnit = "Celsius"
+                }
+                "Kelvin" -> {
+                    result = input - 273.15
+                    resultUnit = "Celsius"
+                }
+                else -> print("Invalid input! Try again.")
+            }
+        }
+
+        output.text = result?.toString() ?: ""
+        outputUnit.text = resultUnit?.toString() ?: ""
+    }
 }
