@@ -1,0 +1,20 @@
+<resources>
+  
+    <!-- App name -->
+    <string name="app_name">CalculatorApp</string>
+  
+    <!-- Text for the result label -->
+    <string name="Result">Result</string>
+  
+    <!-- Array of conversion units to populate the spinner -->
+    <string-array name="convertFromUnit">
+        <item>Kilometer</item>
+        <item>Miles</item>
+        <item>Centimeter</item>
+        <item>Inches</item>
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
+    </string-array>
+
+</resources>
