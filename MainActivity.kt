@@ -54,11 +54,14 @@ class MainActivity : AppCompatActivity() {
     // Function to convert the value to the specified unit
     // This function is created in such a way that each unit will be converted to a specified unit that is hard coded.
     private fun calculateResult(fromUnit: String, inputValue: String) {
+      
         val input = inputValue.toFloatOrNull()
-
+        
+        // Declare variables to store the result and result unit
         var result: Double? = null
         var resultUnit: String? = null
-
+        
+      // The core of the function
         if (input != null && fromUnit != null) {
             when (fromUnit) {
                 "Kilometer" -> {
